@@ -13,7 +13,7 @@ public class ScoreCard {
     private List<String> rounds = new ArrayList<String>();
     private RoundFactory roundFactory;
 
-    public void setColor(String color) {
+    public ScoreCard(String color) {
         this.color = color;
     }
 
@@ -30,14 +30,26 @@ public class ScoreCard {
     }
 
     public void loadJudgeScoreCard() {
-
+        /* roundFactory.getRound(); */
     }
 
     public int getRedCornerFinalScore() {
-        return 0;
+        int sumPoints = 0;
+        for (String round : rounds) {
+            String[] parts = round.split(" ");
+            int puntuation = Integer.parseInt(parts[0]);
+            sumPoints += puntuation;
+        }
+        return sumPoints;
     }
 
     public int getBlueCornerFinalScore() {
-        return 0;
+        int sumPoints = 0;
+        for (String round : rounds) {
+            String[] parts = round.split(" ");
+            int puntuation = Integer.parseInt(parts[2]);
+            sumPoints += puntuation;
+        }
+        return sumPoints;
     }
 }
