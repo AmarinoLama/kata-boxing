@@ -21,7 +21,7 @@ public class PointsDeducted implements Round {
 
     @Override
     public void boxerRoundScore() {
-        String[] parts = this.roundScore.replace(", 1", "").split(" ");
+        String[] parts = this.roundScore.replace(", 1", "").replace("1, ","").split(" ");
         this.blueBoxerScore = (byte) Integer.parseInt(parts[2]);
         this.redBoxerScore = (byte) Integer.parseInt(parts[0]);
     }
