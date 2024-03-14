@@ -19,14 +19,10 @@ public class PointsDeducted implements Round {
         return this.blueBoxerScore;
     }
 
-    /* no entiendo estos dos de abajo */
-
     @Override
-    public String boxerRoundScore() {
-        return this.roundScore;
-    }
-
-    public PointsDeducted PointsDeducted (String roundScore) {
-        return null;
+    public void boxerRoundScore() {
+        String[] parts = this.roundScore.split(" ");
+        this.blueBoxerScore = (byte) Integer.parseInt(parts[2]);
+        this.redBoxerScore = (byte) Integer.parseInt(parts[0]);
     }
 }
