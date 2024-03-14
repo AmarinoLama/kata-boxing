@@ -14,6 +14,7 @@ public class ScoreCard {
     private RoundFactory roundFactory;
 
     public ScoreCard(String color) {
+        /* cómo se hace para q salga bonito al final */
         this.color = color;
     }
 
