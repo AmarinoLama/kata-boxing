@@ -25,5 +25,4 @@ public class RegularRound implements Round {
         this.blueBoxerScore = (byte) Integer.parseInt(parts[2]);
         this.redBoxerScore = (byte) Integer.parseInt(parts[0]);
     }
-
 }
