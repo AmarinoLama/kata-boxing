@@ -168,13 +168,13 @@ public class Brunosbox
          * en tiempo de ejecución.
          */
 
-        /*  si pongo esto peta:
+
 
         RegularRound regular = (RegularRound) RoundFactory.getRound("9 - 10");
         System.out.println("\t regular round: " + regular);
         KnockdownRound knockdown = (KnockdownRound) RoundFactory.getRound("8 - 10");
         System.out.println("\t knockdown round: " + knockdown);
-        */
+
 
         /**
          * Carga en la tarjeta blue
@@ -203,12 +203,12 @@ public class Brunosbox
                 blueScoreCard.setRedCorner("Rocky Balboa");
                 blueScoreCard.setBlueCorner("Apollo Creed");
 
-         /*       blueScoreCard.loadJudgeScoreCard(data[1]
+         blueScoreCard.loadJudgeScoreCard(data[1]
                         // Escribe aquí el código para acceder al segundo
                         // elemento del array String[][] data de la línea 13,
                         // la tarjeta azul
                 );
-         */       System.out.println(blueScoreCard);
+               System.out.println(blueScoreCard);
 
                 /**
                  * Calcula el final score o puntuación total
@@ -251,10 +251,9 @@ public class Brunosbox
                  * en tiempo de ejecución.
                  */
 
-                /* si pongo esto peta:
 
                 PointsDeducted pointsDeducted = (PointsDeducted) RoundFactory.getRound("1, 8 - 10");
-                System.out.println("\n\t factory deducted round: " + pointsDeducted); */
+                System.out.println("\n\t factory deducted round: " + pointsDeducted);
 
                 /**
                  * Carga en la tarjeta pink
@@ -284,12 +283,12 @@ public class Brunosbox
                 pinkScoreCard.setRedCorner("Rocky Balboa");
                 pinkScoreCard.setBlueCorner("Apollo Creed");
 
-         /*       pinkScoreCard.loadJudgeScoreCard(data[2]
+         pinkScoreCard.loadJudgeScoreCard(data[2]
                         // Escribe aquí el código para acceder al tercer
                         // elemento del array String[][] data de la línea 13,
                         // la tarjeta rosa
                 );
-         */       System.out.println(pinkScoreCard);
+              System.out.println(pinkScoreCard);
 
                 /**
                  * Calcula el final score o puntuación total
