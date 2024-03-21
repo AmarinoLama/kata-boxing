@@ -1,5 +1,6 @@
 package edu.badpals.Brunosbox.Card;
 
+import edu.badpals.Brunosbox.Round.Round;
 import edu.badpals.Brunosbox.Round.RoundFactory;
 
 import java.util.ArrayList;
@@ -14,7 +15,6 @@ public class ScoreCard {
     private RoundFactory roundFactory;
 
     public ScoreCard(String color) {
-        /* cómo se hace para q salga bonito al final */
         this.color = color;
     }
 
@@ -30,14 +30,17 @@ public class ScoreCard {
         return (byte) rounds.size();
     }
 
-    public void loadJudgeScoreCard() {
-        /* roundFactory.getRound(); */
+    public void loadJudgeScoreCard(String[] judgeScorecard) {
+        for (String round : judgeScorecard) {
+            String roundFormated = round.replace(" ,1", "").replace("1, ","");
+            rounds.add(roundFormated);
+        }
     }
 
     public int getRedCornerFinalScore() {
         int sumPoints = 0;
         for (String round : rounds) {
-            String[] parts = round.split(" ");
+            String[] parts = round.split(" - ");
             int puntuation = Integer.parseInt(parts[0]);
             sumPoints += puntuation;
         }
@@ -52,5 +55,27 @@ public class ScoreCard {
             sumPoints += puntuation;
         }
         return sumPoints;
+    }
+
+    @Override
+    public String toString() {
+        String output = "---------------   " + color + "   ---------------" + "\n" +
+                "\t" + redCorner + "\t\t" + blueCorner + "\n" +
+                "\t\t\t\t" + getNumRounds() + " rounds" + "\n" +
+                "Round   " + "Score   " + "  Round     " + "Score   " + "Round   " + "\n" +
+                "Score   " + "Total   " + "            " + "Total   " + "Score   " + "\n";
+
+        byte redSumPuntuation = 0;
+        byte blueSumPuntuation = 0;
+        int numRound = 1;
+
+        for (String round : this.rounds) {
+            String[] parts = round.split(" - ");
+            redSumPuntuation += (byte) Integer.parseInt(parts[0]);
+            blueSumPuntuation += (byte) Integer.parseInt(parts[1]);
+            output += parts[0] + " \t\t" + redSumPuntuation + " \t\t\t" + numRound + "\t\t" + blueSumPuntuation + " \t\t" + parts[1] + "\n";
+            numRound += 1;
+        }
+        return output;
     }
 }
