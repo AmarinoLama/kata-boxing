@@ -32,7 +32,8 @@ public class ScoreCard {
 
     public void loadJudgeScoreCard(String[] judgeScorecard) {
         for (String round : judgeScorecard) {
-            rounds.add(round);
+            String roundFormated = round.replace(" ,1", "").replace("1, ","");
+            rounds.add(roundFormated);
         }
     }
 
@@ -72,7 +73,7 @@ public class ScoreCard {
             String[] parts = round.split(" - ");
             redSumPuntuation += (byte) Integer.parseInt(parts[0]);
             blueSumPuntuation += (byte) Integer.parseInt(parts[1]);
-            output += parts[0] + " \t\t" + redSumPuntuation + " \t\t\t" + numRound + "\t\t" + parts[1] + " \t\t" + blueSumPuntuation + "\n";
+            output += parts[0] + " \t\t" + redSumPuntuation + " \t\t\t" + numRound + "\t\t" + blueSumPuntuation + " \t\t" + parts[1] + "\n";
             numRound += 1;
         }
         return output;
