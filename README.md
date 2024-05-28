@@ -1,1 +1,1 @@
-Aman Lama Vilariño
+Examen de fin del segundo trimestre propuesto por [@dfleta](https://github.com/dfleta) y realizado por Aman Lama Vilariño donde se ponen en práctica todos los conocimientos adquiridos a lo largo del curso.
